@@ -1,0 +1,211 @@
+nav {
+  height: 75px;
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  margin-bottom: 15px;
+}
+
+.nav__container {
+  width: 65%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav__container ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__item {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.nav__item.link:hover {
+  background-color: #3d52bf;
+  transform: translateY(-5px);
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+}
+
+#logo {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 35px;
+  color: #ffe401;
+}
+
+#logo .highlight {
+  font-family: "Beau Rivage", cursive;
+}
+
+#search {
+  width: 500px;
+  height: 40px;
+  background-color: white;
+  position: relative;
+}
+
+#search input.search__field {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 17px;
+}
+
+#search .search__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.icon__class {
+  font-size: 35px;
+  margin-right: 5px;
+  color: #fed698;
+}
+
+.member__box {
+  text-align: center;
+  line-height: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav__item--link {
+  color: white;
+  cursor: pointer;
+}
+
+ul.nav__items li a {
+  color: white;
+}
+
+/* Modal Box Register/Login */
+.modalBox {
+  /* width: 450px; */
+  /* height: fit-content; */
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 99;
+  position: relative;
+}
+
+.close__btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.modalBox__header {
+  text-align: center;
+}
+
+.modalBox > div {
+  margin-bottom: 15px;
+}
+
+.form__group.double {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__item {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+span.message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 14px;
+  color: #e63946;
+}
+
+.inputField {
+  width: 100%;
+  height: 45px;
+  padding: 5px;
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid #bebcbc;
+  transition: 0.25s;
+}
+
+.inputField:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.inputField::-webkit-outer-spin-button,
+.inputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.25s;
+}
+
+.form__outer {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  user-select: none;
+  transition: 0.25s;
+  opacity: 1;
+  z-index: 99;
+}
+
+.form__outer.hide {
+  pointer-events: none;
+  opacity: 0;
+}
+
+#form--login {
+  position: fixed;
+  width: 400px;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,74 @@
+create table manufacturers (
+    id int primary key auto_increment,
+    name varchar(50),
+    created_at datetime,
+    updated_at datetime
+)
+
+create table status (
+    id int primary key auto_increment,
+    name varchar(50)
+)
+
+create table categories (
+    id int primary key auto_increment,
+    name varchar(50),
+    created_at datetime,
+    updated_at datetime
+)
+
+create table products (
+    id int primary key auto_increment,
+    title varchar(100),
+    thumbnail varchar(250),
+    price float,
+    detail text,
+    star float,
+    voucher varchar(100),
+    created_at datetime,
+    updated_at datetime,
+    manufacturer_id int references manufacturers(id),
+    status_id int references status(id),
+    category_id int references categories(id)
+)
+
+create table users (
+    id int primary key auto_increment,
+    username varchar(25),
+    fullname varchar(50),
+    email varchar(200),
+    password varchar(32)
+)
+
+create table address (
+    id int primary key auto_increment,
+    address varchar(200),
+    user_id int references users(id)
+)
+
+create table phone_num (
+    id int primary key auto_increment,
+    phone_num varchar(16),
+    user_id int references users(id)
+)
+
+create table cart (
+    id int primary key auto_increment,
+    recipient_name varchar(50),
+    phone_num varchar(16),
+    address varchar(200),
+    message text null,
+    total_price float,
+    user_id int references users(id)
+)
+
+create table orders (
+    id int primary key auto_increment,
+    product_id int references products(id),
+    quantity int,
+    price float,
+    total_price float,
+    created_at datetime,
+    updated_at datetime,
+    cart_id int references cart(id)
+)
